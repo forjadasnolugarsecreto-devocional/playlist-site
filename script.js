@@ -1,26 +1,26 @@
 const playlist = [
     {
-        title: "Música 1",
+        title: "Canção & Louvor | Eu Nunca Fui Forte",
         youtubeId: "Sg0_mFLVqZo"
     },
     {
-        title: "Música 2",
+        title: "Stella Laura | O Senhor é o Meu Pastor",
         youtubeId: "WTen9x3j6Sw"
     },
     {
-        title: "Música 3",
+        title: "Débora Almeida | Testemunho Lindo",
         youtubeId: "dNMIxWWxYNo"
     },
     {
-        title: "Música 4",
+        title: "Kailane Frauches | No Secreto",
         youtubeId: "QYKpysFX-9I"
     },
     {
-        title: "Música 5",
+        title: "Rebeca Carvalho & Leandro Borges - Você Viverá",
         youtubeId: "66BP5rpxydo"
     },
     {
-        title: "Música 6",
+        title: "Oração Forjadas no Lugar Secreto",
         youtubeId: "Kv4eCXia5fQ"
     }
 ];
