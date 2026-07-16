@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -5,7 +7,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Montserrat', sans-serif;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -32,23 +34,29 @@ body{
 }
 
 .glass{
-    background:rgba(84, 18, 34, 0.82);
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(212,175,55,.35);
+    background:rgba(245,238,225,.88);
+    backdrop-filter:blur(12px);
     border-radius:20px;
     padding:30px;
-    color:#F5E8CF;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    color:#5B1F2A;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
 header h1{
+    font-family:'Cormorant Garamond', serif;
+    font-size:42px;
+    font-weight:700;
+    color:#5B1F2A;
+    text-align:center;
     margin-bottom:10px;
-    color:#D4AF37;
 }
 
 header p{
+    font-size:15px;
+    color:#7A4A52;
+    text-align:center;
     margin-bottom:25px;
-    color:#F5E8CF;
+    line-height:1.6;
 }
 
 .playlist{
@@ -58,33 +66,35 @@ header p{
 }
 
 .music{
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(212,175,55,.18);
-    color:#F5E8CF;
+    background:rgba(255,255,255,.12);
+    border:none;
+    color:white;
     padding:15px;
     border-radius:10px;
     cursor:pointer;
     transition:.3s;
     text-align:left;
-    font-size:16px;
+    font-size:15px;
+    font-family:'Montserrat', sans-serif;
 }
 
 .music:hover{
-    background:#D4AF37;
-    color:#4B1622;
+    background:white;
+    color:black;
 }
 
 .music.active{
-    background:#D4AF37;
-    color:#4B1622;
-    font-weight:bold;
+    background:#d4af37;
+    color:black;
 }
 
 #currentTitle{
     margin-top:25px;
     margin-bottom:20px;
     text-align:center;
-    color:#D4AF37;
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+    color:#5B1F2A;
 }
 
 .controls{
@@ -97,17 +107,14 @@ header p{
     width:50px;
     height:50px;
     border-radius:50%;
-    border:1px solid rgba(212,175,55,.35);
-    background:rgba(255,255,255,.08);
-    color:#F5E8CF;
+    border:none;
     cursor:pointer;
     font-size:20px;
     transition:.3s;
 }
 
 .controls button:hover{
-    background:#D4AF37;
-    color:#4B1622;
+    transform:scale(1.08);
 }
 
 #player{
