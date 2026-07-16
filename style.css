@@ -6,10 +6,6 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-background-image: url("background.jpg");
-background-size: cover;
-background-position: center 10%;
-background-repeat: no-repeat;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -19,8 +15,9 @@ background-repeat: no-repeat;
 .background{
     position:fixed;
     inset:0;
-    background:url("background.jpg") center 10% / cover no-repeat;
+    background:url("background.jpg") center center/cover no-repeat;
     z-index:-2;
+}
 }
 .overlay{
     position:fixed;
