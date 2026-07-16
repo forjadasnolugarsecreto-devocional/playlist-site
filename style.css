@@ -129,45 +129,50 @@ header p{
     body{
         justify-content:center;
         align-items:flex-end;
-        padding:20px;
-    }
-
-    .background{
-        background-position:center top;
+        padding:12px;
     }
 
     .app{
         width:100%;
-        max-width:100%;
-        margin:0;
+        max-width:320px;
+        margin:0 auto 10px;
     }
 
     .glass{
-        padding:22px;
-        border-radius:18px;
-        margin-bottom:20px;
+        padding:18px;
+        border-radius:16px;
     }
 
     header h1{
-        font-size:32px;
+        font-size:28px;
     }
 
     header p{
-        font-size:14px;
+        font-size:13px;
+        margin-bottom:18px;
+    }
+
+    .playlist{
+        gap:8px;
     }
 
     .music{
-        font-size:14px;
-        padding:14px;
-    }
-
-    .controls button{
-        width:45px;
-        height:45px;
-        font-size:18px;
+        padding:10px 12px;
+        font-size:13px;
     }
 
     #currentTitle{
-        font-size:24px;
+        font-size:22px;
+        margin:18px 0 14px;
+    }
+
+    .controls{
+        gap:12px;
+    }
+
+    .controls button{
+        width:42px;
+        height:42px;
+        font-size:18px;
     }
 }
