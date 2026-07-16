@@ -1,156 +1,52 @@
-/* ===========================
-   RESET
-=========================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,
 body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:'Montserrat',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    background:url("background.jpg") center center/cover no-repeat;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
-
-/* ===========================
-   CORES
-=========================== */
-
-:root{
-
-    --glass:rgba(255,255,255,.12);
-
-    --glass-border:rgba(255,255,255,.18);
-
-    --text:#ffffff;
-
-    --secondary:#d8d8d8;
-
-    --accent:#d4af37;
-
-}
-
-/* ===========================
-   FUNDO
-=========================== */
-
-.background{
-
-    position:fixed;
-
-    inset:0;
-
-    background-image:url("assets/background.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    z-index:-3;
-
-}
-
-/* camada escura */
-
-.overlay{
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.45);
-
-    z-index:-2;
-
-}
-
-/* ===========================
-   CENTRALIZAÇÃO
-=========================== */
 
 .app{
 
-    width:100%;
-
-    height:100vh;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:40px;
+    width:90%;
+    max-width:700px;
 
 }
-
-/* ===========================
-   PAINEL
-=========================== */
 
 .glass{
 
-    width:100%;
+    background:rgba(0,0,0,.55);
 
-    max-width:700px;
+    backdrop-filter:blur(10px);
 
-    padding:40px;
+    border-radius:20px;
 
-    border-radius:30px;
+    padding:30px;
 
-    background:var(--glass);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid var(--glass-border);
-
-    box-shadow:
-
-        0 20px 50px rgba(0,0,0,.35);
+    color:white;
 
 }
 
-/* ===========================
-   TÍTULO
-=========================== */
+h1{
 
-header{
-
-    margin-bottom:30px;
-
-}
-
-header h1{
-
-    color:var(--text);
-
-    font-size:2rem;
-
-    font-weight:700;
+    margin-bottom:10px;
 
 }
 
 header p{
 
-    color:var(--secondary);
+    margin-bottom:25px;
 
-    margin-top:10px;
-
-    line-height:1.6;
+    color:#ddd;
 
 }
-
-/* ===========================
-   PLAYLIST
-=========================== */
 
 .playlist{
 
@@ -158,8 +54,84 @@ header p{
 
     flex-direction:column;
 
-    gap:12px;
+    gap:10px;
 
-    margin-bottom:35px;
+}
+
+.music{
+
+    background:rgba(255,255,255,.12);
+
+    border:none;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    text-align:left;
+
+    font-size:16px;
+
+}
+
+.music:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+.music.active{
+
+    background:#d4af37;
+
+    color:black;
+
+}
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-top:30px;
+
+}
+
+.controls button{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+}
+
+#player{
+
+    position:absolute;
+
+    width:1px;
+
+    height:1px;
+
+    left:-9999px;
 
 }
