@@ -127,52 +127,70 @@ header p{
 @media (max-width: 768px){
 
     body{
+        padding:0;
+        display:flex;
         justify-content:center;
-        align-items:flex-end;
-        padding:12px;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .background{
+        background-position:center center;
+    }
+
+    .overlay{
+        background:rgba(0,0,0,.35);
     }
 
     .app{
         width:100%;
-        max-width:320px;
-        margin:0 auto 10px;
+        max-width:100%;
+        padding:18px;
+        margin:0;
     }
 
     .glass{
-        padding:18px;
-        border-radius:16px;
+        width:100%;
+        padding:22px;
+        border-radius:20px;
     }
 
     header h1{
-        font-size:28px;
+        font-size:34px;
+        line-height:1.1;
+        margin-bottom:8px;
     }
 
     header p{
-        font-size:13px;
-        margin-bottom:18px;
+        font-size:15px;
+        line-height:1.5;
+        margin-bottom:20px;
     }
 
     .playlist{
-        gap:8px;
-    }
-
-    .music{
-        padding:10px 12px;
-        font-size:13px;
-    }
-
-    #currentTitle{
-        font-size:22px;
-        margin:18px 0 14px;
-    }
-
-    .controls{
         gap:12px;
     }
 
+    .music{
+        width:100%;
+        padding:16px;
+        font-size:15px;
+        border-radius:12px;
+    }
+
+    #currentTitle{
+        font-size:26px;
+        margin:22px 0 18px;
+    }
+
+    .controls{
+        gap:18px;
+        margin-top:8px;
+    }
+
     .controls button{
-        width:42px;
-        height:42px;
-        font-size:18px;
+        width:54px;
+        height:54px;
+        font-size:22px;
     }
 }
