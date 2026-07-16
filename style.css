@@ -124,3 +124,50 @@ header p{
     width:1px;
     height:1px;
 }
+@media (max-width: 768px){
+
+    body{
+        justify-content:center;
+        align-items:flex-end;
+        padding:20px;
+    }
+
+    .background{
+        background-position:center top;
+    }
+
+    .app{
+        width:100%;
+        max-width:100%;
+        margin:0;
+    }
+
+    .glass{
+        padding:22px;
+        border-radius:18px;
+        margin-bottom:20px;
+    }
+
+    header h1{
+        font-size:32px;
+    }
+
+    header p{
+        font-size:14px;
+    }
+
+    .music{
+        font-size:14px;
+        padding:14px;
+    }
+
+    .controls button{
+        width:45px;
+        height:45px;
+        font-size:18px;
+    }
+
+    #currentTitle{
+        font-size:24px;
+    }
+}
