@@ -66,9 +66,9 @@ header p{
 }
 
 .music{
-    background:rgba(255,255,255,.12);
+    background:rgba(91,31,42,.88);
     border:none;
-    color:white;
+    color:#F5EEE1;
     padding:15px;
     border-radius:10px;
     cursor:pointer;
@@ -79,13 +79,14 @@ header p{
 }
 
 .music:hover{
-    background:white;
-    color:black;
+    background:rgba(120,45,60,.95);
+    color:#F5EEE1;
 }
 
 .music.active{
-    background:#d4af37;
-    color:black;
+    background:#7A2E3B;
+    color:#F5EEE1;
+    font-weight:600;
 }
 
 #currentTitle{
