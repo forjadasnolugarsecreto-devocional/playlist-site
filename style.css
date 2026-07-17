@@ -13,125 +13,94 @@ body{
     align-items:center;
 }
 
-.app{
+.background{
+    position:fixed;
+    inset:0;
+    background:url("background.jpg") center center/cover no-repeat;
+    z-index:-2;
+}
 
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:-1;
+}
+
+.app{
     width:90%;
     max-width:700px;
-
 }
 
 .glass{
-
     background:rgba(0,0,0,.55);
-
     backdrop-filter:blur(10px);
-
     border-radius:20px;
-
     padding:30px;
-
     color:white;
-
 }
 
-h1{
-
+header h1{
     margin-bottom:10px;
-
 }
 
 header p{
-
     margin-bottom:25px;
-
     color:#ddd;
-
 }
 
 .playlist{
-
     display:flex;
-
     flex-direction:column;
-
     gap:10px;
-
 }
 
 .music{
-
     background:rgba(255,255,255,.12);
-
     border:none;
-
     color:white;
-
     padding:15px;
-
     border-radius:10px;
-
     cursor:pointer;
-
     transition:.3s;
-
     text-align:left;
-
     font-size:16px;
-
 }
 
 .music:hover{
-
     background:white;
-
     color:black;
-
 }
 
 .music.active{
-
     background:#d4af37;
-
     color:black;
+}
 
+#currentTitle{
+    margin-top:25px;
+    margin-bottom:20px;
+    text-align:center;
 }
 
 .controls{
-
     display:flex;
-
     justify-content:center;
-
     gap:20px;
-
-    margin-top:30px;
-
 }
 
 .controls button{
-
     width:50px;
-
     height:50px;
-
     border-radius:50%;
-
     border:none;
-
     cursor:pointer;
-
     font-size:20px;
-
 }
 
 #player{
-
     position:absolute;
-
-    width:1px;
-
-    height:1px;
-
     left:-9999px;
-
+    width:1px;
+    height:1px;
 }
