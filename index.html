@@ -8,48 +8,41 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-
-<div class="background"></div>
 
 <div class="overlay"></div>
 
 <div class="app">
 
-<div class="glass">
-
 <h1>Playlist Oficial</h1>
 
-<p>Clique em uma música.</p>
+<p>Clique em uma música para começar a ouvir.</p>
 
-<div id="playlist" class="playlist"></div>
+<div id="playlist"></div>
 
-<h2 id="currentTitle">
-Nenhuma música selecionada
-</h2>
+<h2 id="current">Nenhuma música selecionada</h2>
 
-<div id="playerContainer">
 
-<iframe
-id="player"
-width="100%"
-height="350"
-src=""
-frameborder="0"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
+<div id="player"></div>
+
+
+<div class="controls">
+
+<button onclick="previous()">⏮</button>
+
+<button onclick="playPause()">▶</button>
+
+<button onclick="next()">⏭</button>
 
 </div>
 
-</div>
 
 </div>
 
+
+<script src="https://www.youtube.com/iframe_api"></script>
 <script src="script.js"></script>
 
 </body>
