@@ -126,23 +126,15 @@ p{
 
 }
 
-#playerContainer{
-
-    margin-top:35px;
-
-}
-
 #player{
 
-    width:100%;
-
-    aspect-ratio:16/9;
-
-    border:none;
-
-    border-radius:15px;
+position:absolute;
+left:-9999px;
+width:1px;
+height:1px;
 
 }
+
 
 #currentTitle{
 
