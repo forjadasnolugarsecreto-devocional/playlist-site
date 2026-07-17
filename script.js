@@ -1,161 +1,88 @@
-const playlist = [
-    {
-        title: "Música 1",
-        youtubeId: "Sg0_mFLVqZo"
-    },
-    {
-        title: "Música 2",
-        youtubeId: "WTen9x3j6Sw"
-    },
-    {
-        title: "Música 3",
-        youtubeId: "dNMIxWWxYNo"
-    },
-    {
-        title: "Música 4",
-        youtubeId: "QYKpysFX-9I"
-    },
-    {
-        title: "Música 5",
-        youtubeId: "66BP5rpxydo"
-    },
-    {
-        title: "Música 6",
-        youtubeId: "Kv4eCXia5fQ"
-    }
+const songs = [
+
+{
+title:"Canção & Louvor - Eu Nunca Fui Forte",
+id:"Sg0_mFLVqZo"
+},
+
+{
+title:"Stella Laura - O Senhor é Meu Pastor",
+id:"WTen9x3j6Sw"
+},
+
+{
+title:"Débora Almeida - Testemunho Lindo",
+id:"dNMIxWWxYNo"
+}
+
 ];
 
-let currentIndex = 0;
+
+
 let player;
-let playing = false;
 
-function onYouTubeIframeAPIReady() {
 
-    player = new YT.Player("player", {
-        height: "1",
-        width: "1",
-        videoId: playlist[0].youtubeId,
-        playerVars: {
-            autoplay: 0,
-            controls: 0,
-            rel: 0
-        },
-        events: {
-            onReady: renderPlaylist,
-            onStateChange: onPlayerStateChange
-        }
-    });
 
-}
+function onYouTubeIframeAPIReady(){
 
-function renderPlaylist(){
 
-    const container = document.getElementById("playlist");
+player = new YT.Player(
+"youtube-player",
 
-    container.innerHTML = "";
+{
 
-    playlist.forEach((music,index)=>{
+height:"280",
 
-        const button = document.createElement("button");
+width:"100%",
 
-        button.className = "music";
 
-        button.innerText = music.title;
+videoId:songs[0].id,
 
-        button.onclick = ()=>playMusic(index);
 
-        container.appendChild(button);
+playerVars:{
 
-    });
+controls:1,
+
+rel:0
 
 }
 
-function playMusic(index){
 
-    currentIndex = index;
+});
 
-    player.loadVideoById(playlist[index].youtubeId);
-
-    document.getElementById("currentTitle").innerText = playlist[index].title;
-
-    document.querySelectorAll(".music").forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document.querySelectorAll(".music")[index].classList.add("active");
-
-    playing = true;
-
-    document.getElementById("playPause").innerText = "⏸";
 
 }
 
-document.getElementById("playPause").onclick = function(){
 
-    if(!player) return;
 
-    if(playing){
+const playlist = document.getElementById("playlist");
 
-        player.pauseVideo();
 
-        playing = false;
 
-        this.innerText = "▶";
+songs.forEach((song)=>{
 
-    }else{
 
-        player.playVideo();
+let item=document.createElement("div");
 
-        playing = true;
 
-        this.innerText = "⏸";
+item.className="music";
 
-    }
+
+item.innerHTML=song.title;
+
+
+
+item.onclick=function(){
+
+
+player.loadVideoById(song.id);
+
 
 };
 
-document.getElementById("next").onclick = function(){
 
-    currentIndex++;
+playlist.appendChild(item);
 
-    if(currentIndex >= playlist.length){
 
-        currentIndex = 0;
 
-    }
-
-    playMusic(currentIndex);
-
-};
-
-document.getElementById("prev").onclick = function(){
-
-    currentIndex--;
-
-    if(currentIndex < 0){
-
-        currentIndex = playlist.length - 1;
-
-    }
-
-    playMusic(currentIndex);
-
-};
-
-function onPlayerStateChange(event){
-
-    if(event.data === YT.PlayerState.ENDED){
-
-        currentIndex++;
-
-        if(currentIndex >= playlist.length){
-
-            currentIndex = 0;
-
-        }
-
-        playMusic(currentIndex);
-
-    }
-
-}
+});
