@@ -1,168 +1,165 @@
+/* ===========================
+   RESET
+=========================== */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+html,
 body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Montserrat',sans-serif;
+}
 
-font-family:'Montserrat',sans-serif;
+/* ===========================
+   CORES
+=========================== */
 
-background:url("background.jpg") center/cover no-repeat;
+:root{
 
-min-height:100vh;
+    --glass:rgba(255,255,255,.12);
 
-display:flex;
+    --glass-border:rgba(255,255,255,.18);
 
-justify-content:center;
+    --text:#ffffff;
 
-align-items:center;
+    --secondary:#d8d8d8;
 
-padding:30px;
+    --accent:#d4af37;
 
 }
 
+/* ===========================
+   FUNDO
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    background-image:url("assets/background.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    z-index:-3;
+
+}
+
+/* camada escura */
 
 .overlay{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:rgba(0,0,0,.45);
+    background:rgba(0,0,0,.45);
+
+    z-index:-2;
 
 }
 
+/* ===========================
+   CENTRALIZAÇÃO
+=========================== */
 
 .app{
 
-position:relative;
+    width:100%;
 
-width:700px;
+    height:100vh;
 
-background:rgba(255,255,255,.65);
+    display:flex;
 
-backdrop-filter:blur(10px);
+    justify-content:center;
 
-padding:40px;
+    align-items:center;
 
-border-radius:25px;
-
-text-align:center;
+    padding:40px;
 
 }
 
+/* ===========================
+   PAINEL
+=========================== */
 
-h1{
+.glass{
 
-font-family:serif;
+    width:100%;
 
-color:#71333e;
+    max-width:700px;
 
-font-size:42px;
+    padding:40px;
 
-}
+    border-radius:30px;
 
+    background:var(--glass);
 
-p{
+    backdrop-filter:blur(18px);
 
-color:#875b63;
+    -webkit-backdrop-filter:blur(18px);
 
-margin:15px 0 30px;
+    border:1px solid var(--glass-border);
 
-}
+    box-shadow:
 
-
-
-.music{
-
-background:#71333e;
-
-color:white;
-
-padding:15px;
-
-border-radius:12px;
-
-margin-bottom:10px;
-
-cursor:pointer;
-
-text-align:left;
+        0 20px 50px rgba(0,0,0,.35);
 
 }
 
+/* ===========================
+   TÍTULO
+=========================== */
 
-.music:hover{
+header{
 
-opacity:.8;
-
-}
-
-
-
-#player{
-
-margin-top:25px;
-
-width:100%;
-
-height:120px;
-
-overflow:hidden;
-
-border-radius:15px;
+    margin-bottom:30px;
 
 }
 
+header h1{
 
-#player iframe{
+    color:var(--text);
 
-width:100%;
+    font-size:2rem;
 
-height:100%;
-
-}
-
-
-
-h2{
-
-margin-top:30px;
-
-font-family:serif;
-
-color:#71333e;
-
-font-size:24px;
+    font-weight:700;
 
 }
 
+header p{
 
+    color:var(--secondary);
 
-.controls{
+    margin-top:10px;
 
-margin-top:20px;
+    line-height:1.6;
 
 }
 
+/* ===========================
+   PLAYLIST
+=========================== */
 
-button{
+.playlist{
 
-border:none;
+    display:flex;
 
-background:white;
+    flex-direction:column;
 
-border-radius:50%;
+    gap:12px;
 
-width:55px;
-
-height:55px;
-
-margin:0 10px;
-
-font-size:22px;
-
-cursor:pointer;
+    margin-bottom:35px;
 
 }
