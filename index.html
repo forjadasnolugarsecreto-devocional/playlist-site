@@ -1,52 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist Oficial</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>Playlist Oficial</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
-    <div class="overlay"></div>
+<div class="background"></div>
 
-    <main class="app">
+<div class="overlay"></div>
 
-        <section class="glass">
+<div class="app">
 
-            <h1>Playlist Oficial</h1>
+<div class="glass">
 
-            <p>Clique em uma música para ouvir.</p>
+<h1>Playlist Oficial</h1>
 
-            <div id="playlist" class="playlist"></div>
+<p>Clique em uma música.</p>
 
-            <div id="playerContainer" class="hidden">
+<div id="playlist" class="playlist"></div>
 
-                <iframe
-                    id="player"
-                    src=""
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                </iframe>
+<h2 id="currentTitle">
+Nenhuma música selecionada
+</h2>
 
-                <h2 id="currentTitle">
-                    Nenhuma música selecionada
-                </h2>
+<div id="playerContainer">
 
-            </div>
+<iframe
+id="player"
+width="100%"
+height="350"
+src=""
+frameborder="0"
+allow="autoplay; encrypted-media"
+allowfullscreen>
+</iframe>
 
-        </section>
+</div>
 
-    </main>
+</div>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
