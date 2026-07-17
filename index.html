@@ -1,75 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Oficial</title>
 
-<title>Playlist Oficial</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background"></div>
+    <div class="overlay"></div>
 
-<div class="overlay"></div>
+    <main class="app">
 
-<div class="app">
+        <section class="glass">
 
-<div class="glass">
+            <h1>Playlist Oficial</h1>
 
-   <div class="playlist-column">
+            <p>Clique em uma música para ouvir.</p>
 
-    <h1>Playlist Oficial</h1>
+            <div id="playlist" class="playlist"></div>
 
-    <p>Clique em uma música.</p>
+            <div id="playerContainer" class="hidden">
 
-    <div id="playlist" class="playlist"></div>
+                <iframe
+                    id="player"
+                    src=""
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
 
-</div>
+                <h2 id="currentTitle">
+                    Nenhuma música selecionada
+                </h2>
 
-<div class="player-column">
+            </div>
 
-    <div class="player-card">
+        </section>
 
-        <iframe
-            id="player"
-            src=""
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
+    </main>
 
-    </div>
-
-    <h2 id="currentTitle">
-        Nenhuma música selecionada
-    </h2>
-
-</div>
-
-<div id="playerContainer">
-
-<iframe
-id="player"
-width="100%"
-height="350"
-src=""
-frameborder="0"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
