@@ -52,17 +52,17 @@ function renderPlaylist(){
 
     const container = document.getElementById("playlist");
 
-    container.innerHTML="";
+    container.innerHTML = "";
 
     playlist.forEach((music,index)=>{
 
-        const button=document.createElement("button");
+        const button = document.createElement("button");
 
-        button.className="music";
+        button.className = "music";
 
-        button.innerText=music.title;
+        button.innerText = music.title;
 
-        button.onclick=()=>playMusic(index);
+        button.onclick = ()=>playMusic(index);
 
         container.appendChild(button);
 
@@ -72,23 +72,25 @@ function renderPlaylist(){
 
 function playMusic(index){
 
-    currentIndex=index;
+    currentIndex = index;
 
     player.loadVideoById(playlist[index].youtubeId);
 
-    document.getElementById("currentTitle").innerText=playlist[index].title;
+    document.getElementById("currentTitle").innerText = playlist[index].title;
 
-    document.querySelectorAll(".music").forEach(btn=>btn.classList.remove("active"));
+    document.querySelectorAll(".music").forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
     document.querySelectorAll(".music")[index].classList.add("active");
 
-    playing=true;
+    playing = true;
 
-    document.getElementById("playPause").innerText="⏸";
+    document.getElementById("playPause").innerText = "⏸";
 
 }
 
-document.getElementById("playPause").onclick=function(){
+document.getElementById("playPause").onclick = function(){
 
     if(!player) return;
 
@@ -96,29 +98,29 @@ document.getElementById("playPause").onclick=function(){
 
         player.pauseVideo();
 
-        playing=false;
+        playing = false;
 
-        this.innerText="▶";
+        this.innerText = "▶";
 
     }else{
 
         player.playVideo();
 
-        playing=true;
+        playing = true;
 
-        this.innerText="⏸";
+        this.innerText = "⏸";
 
     }
 
 };
 
-document.getElementById("next").onclick=function(){
+document.getElementById("next").onclick = function(){
 
     currentIndex++;
 
-    if(currentIndex>=playlist.length){
+    if(currentIndex >= playlist.length){
 
-        currentIndex=0;
+        currentIndex = 0;
 
     }
 
@@ -126,13 +128,13 @@ document.getElementById("next").onclick=function(){
 
 };
 
-document.getElementById("prev").onclick=function(){
+document.getElementById("prev").onclick = function(){
 
     currentIndex--;
 
-    if(currentIndex<0){
+    if(currentIndex < 0){
 
-        currentIndex=playlist.length-1;
+        currentIndex = playlist.length - 1;
 
     }
 
@@ -142,13 +144,13 @@ document.getElementById("prev").onclick=function(){
 
 function onPlayerStateChange(event){
 
-    if(event.data===YT.PlayerState.ENDED){
+    if(event.data === YT.PlayerState.ENDED){
 
         currentIndex++;
 
-        if(currentIndex>=playlist.length){
+        if(currentIndex >= playlist.length){
 
-            currentIndex=0;
+            currentIndex = 0;
 
         }
 
