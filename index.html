@@ -2,58 +2,44 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist Oficial</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>Playlist</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
 </head>
+
 
 <body>
 
-    <div class="background"></div>
+<div class="overlay"></div>
 
-    <div class="overlay"></div>
 
-    <main class="app">
+<div class="container">
 
-        <section class="glass">
+    <h1>Playlist</h1>
 
-            <header>
-                <h1>Playlist Oficial</h1>
-                <p>Clique em uma música para começar a ouvir.</p>
-            </header>
 
-            <div id="playlist" class="playlist"></div>
+    <div id="playlist"></div>
 
-            <footer>
 
-                <h2 id="currentTitle">
-                    Nenhuma música selecionada
-                </h2>
+    <div class="player">
 
-                <div class="controls">
-                    <button id="prev">⏮</button>
-                    <button id="playPause">▶</button>
-                    <button id="next">⏭</button>
-                </div>
+        <div id="youtube-player"></div>
 
-            </footer>
+    </div>
 
-        </section>
 
-    </main>
+</div>
 
-    <div id="player"></div>
 
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="script.js"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="script.js"></script>
+
 
 </body>
 
