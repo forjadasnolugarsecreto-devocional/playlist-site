@@ -32,13 +32,11 @@ id:"Kv4eCXia5fQ"
 
 ];
 
-const playlistDiv=document.getElementById("playlist");
+const container=document.getElementById("playlist");
 
-const player=document.getElementById("player");
+const iframe=document.getElementById("player");
 
 const title=document.getElementById("currentTitle");
-
-const container=document.getElementById("playerContainer");
 
 playlist.forEach((music,index)=>{
 
@@ -46,30 +44,24 @@ const btn=document.createElement("button");
 
 btn.className="music";
 
-btn.innerHTML="🎵 "+music.title;
+btn.innerText=music.title;
 
-btn.onclick=function(){
+btn.onclick=()=>{
 
 document.querySelectorAll(".music").forEach(item=>item.classList.remove("active"));
 
 btn.classList.add("active");
 
-container.classList.remove("hidden");
-
 title.innerText=music.title;
 
-player.src=`https://www.youtube.com/embed/${music.id}?autoplay=1`;
-
-player.scrollIntoView({
-
-behavior:"smooth",
-
-block:"center"
-
-});
+iframe.src=`https://www.youtube.com/embed/${music.id}?autoplay=1`;
 
 };
 
-playlistDiv.appendChild(btn);
+container.appendChild(btn);
 
 });
+
+btn=container.children[0];
+
+btn.click();
