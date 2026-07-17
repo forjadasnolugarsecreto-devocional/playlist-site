@@ -34,12 +34,15 @@ body{
 }
 
 .glass{
-    background:rgba(245,238,225,.60);
-    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,.55);
+    backdrop-filter:blur(10px);
     border-radius:20px;
     padding:30px;
-    color:#5B1F2A;
-    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    color:white;
+
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
 }
 
 header h1{
@@ -206,4 +209,34 @@ border:none;
         height:54px;
         font-size:22px;
     }
+.left{
+
+    flex:1;
+
+}
+
+.right{
+
+    width:420px;
+
+}
+
+#player{
+
+    width:100%;
+
+    height:235px;
+
+    border:none;
+
+    border-radius:12px;
+
+}
+
+#currentTitle{
+
+    margin-top:20px;
+
+    text-align:center;
+
 }
