@@ -1,161 +1,67 @@
 const playlist = [
-    {
-        title: "Canção & Louvor | Eu Nunca Fui Forte",
-        youtubeId: "Sg0_mFLVqZo"
-    },
-    {
-        title: "Stella Laura | O Senhor é o Meu Pastor",
-        youtubeId: "WTen9x3j6Sw"
-    },
-    {
-        title: "Débora Almeida | Testemunho Lindo",
-        youtubeId: "dNMIxWWxYNo"
-    },
-    {
-        title: "Kailane Frauches | No Secreto",
-        youtubeId: "QYKpysFX-9I"
-    },
-    {
-        title: "Rebeca Carvalho & Leandro Borges - Você Viverá",
-        youtubeId: "66BP5rpxydo"
-    },
-    {
-        title: "Oração Forjadas no Lugar Secreto",
-        youtubeId: "Kv4eCXia5fQ"
-    }
+
+{
+title:"Música 1",
+id:"Sg0_mFLVqZo"
+},
+
+{
+title:"Música 2",
+id:"WTen9x3j6Sw"
+},
+
+{
+title:"Música 3",
+id:"dNMIxWWxYNo"
+},
+
+{
+title:"Música 4",
+id:"QYKpysFX-9I"
+},
+
+{
+title:"Música 5",
+id:"66BP5rpxydo"
+},
+
+{
+title:"Música 6",
+id:"Kv4eCXia5fQ"
+}
+
 ];
 
-let currentIndex = 0;
-let player;
-let playing = false;
+const container=document.getElementById("playlist");
 
-function onYouTubeIframeAPIReady() {
+const iframe=document.getElementById("player");
 
-    player = new YT.Player("player", {
-        height: "1",
-        width: "1",
-        videoId: playlist[0].youtubeId,
-        playerVars: {
-            autoplay: 0,
-            controls: 0,
-            rel: 0
-        },
-        events: {
-            onReady: renderPlaylist,
-            onStateChange: onPlayerStateChange
-        }
-    });
+const title=document.getElementById("currentTitle");
 
-}
+playlist.forEach((music,index)=>{
 
-function renderPlaylist(){
+const btn=document.createElement("button");
 
-    const container = document.getElementById("playlist");
+btn.className="music";
 
-    container.innerHTML = "";
+btn.innerText=music.title;
 
-    playlist.forEach((music,index)=>{
+btn.onclick=()=>{
 
-        const button = document.createElement("button");
+document.querySelectorAll(".music").forEach(item=>item.classList.remove("active"));
 
-        button.className = "music";
+btn.classList.add("active");
 
-        button.innerText = music.title;
+title.innerText=music.title;
 
-        button.onclick = ()=>playMusic(index);
-
-        container.appendChild(button);
-
-    });
-
-}
-
-function playMusic(index){
-
-    currentIndex = index;
-
-    player.loadVideoById(playlist[index].youtubeId);
-
-    document.getElementById("currentTitle").innerText = playlist[index].title;
-
-    document.querySelectorAll(".music").forEach(btn=>{
-        btn.classList.remove("active");
-    });
-
-    document.querySelectorAll(".music")[index].classList.add("active");
-
-    playing = true;
-
-    document.getElementById("playPause").innerText = "⏸";
-
-}
-
-document.getElementById("playPause").onclick = function(){
-
-    if(!player) return;
-
-    if(playing){
-
-        player.pauseVideo();
-
-        playing = false;
-
-        this.innerText = "▶";
-
-    }else{
-
-        player.playVideo();
-
-        playing = true;
-
-        this.innerText = "⏸";
-
-    }
+iframe.src=`https://www.youtube.com/embed/${music.id}?autoplay=1`;
 
 };
 
-document.getElementById("next").onclick = function(){
+container.appendChild(btn);
 
-    currentIndex++;
+});
 
-    if(currentIndex >= playlist.length){
+btn=container.children[0];
 
-        currentIndex = 0;
-
-    }
-
-    playMusic(currentIndex);
-
-};
-
-document.getElementById("prev").onclick = function(){
-
-    currentIndex--;
-
-    if(currentIndex < 0){
-
-        currentIndex = playlist.length - 1;
-
-    }
-
-    playMusic(currentIndex);
-
-};
-
-function onPlayerStateChange(event){
-
-    if(event.data === YT.PlayerState.ENDED){
-
-        currentIndex++;
-
-        if(currentIndex >= playlist.length){
-
-            currentIndex = 0;
-
-        }
-
-        playMusic(currentIndex);
-
-    }
-
-}
+btn.click();
