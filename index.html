@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
 
-<title>Playlist Oficial</title>
+    <link rel="stylesheet" href="style.css">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<div class="background"></div>
+
 <div class="overlay"></div>
 
-<div class="app">
+<div class="container">
 
-<h1>Playlist Oficial</h1>
+    <div class="card">
 
-<p>Clique em uma música para começar a ouvir.</p>
+        <div class="left">
 
-<div id="playlist"></div>
+            <h1>Playlist Oficial</h1>
 
-<h2 id="current">Nenhuma música selecionada</h2>
+            <p class="descricao">
+                Clique em uma música para começar a ouvir.
+            </p>
 
+            <div id="playlist"></div>
+
+        </div>
+
+        <div class="right">
+
+            <div class="cover">
+
+                <div class="play-icon">♫</div>
+
+            </div>
+
+            <h2 id="currentTitle">
+                Nenhuma música selecionada
+            </h2>
+
+            <div class="controls">
+
+                <button id="prev">⏮</button>
+
+                <button id="playPause">▶</button>
+
+                <button id="next">⏭</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <div id="player"></div>
 
-
-<div class="controls">
-
-<button onclick="previous()">⏮</button>
-
-<button onclick="playPause()">▶</button>
-
-<button onclick="next()">⏭</button>
-
-</div>
-
-
-</div>
-
-
 <script src="https://www.youtube.com/iframe_api"></script>
+
 <script src="script.js"></script>
 
 </body>
