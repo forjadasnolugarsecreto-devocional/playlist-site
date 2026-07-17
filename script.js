@@ -1,137 +1,159 @@
 const playlist = [
-
-{
-title:"Canção & Louvor | Eu Nunca Fui Forte",
-id:"Sg0_mFLVqZo"
-},
-
-{
-title:"Stella Laura | O Senhor é o Meu Pastor",
-id:"WTen9x3j6Sw"
-},
-
-{
-title:"Débora Almeida | Testemunho Lindo",
-id:"dNMIxWWxYNo"
-},
-
-{
-title:"Kailane Frauches | No Secreto",
-id:"ID_DO_VIDEO"
-},
-
-{
-title:"Rebeca Carvalho & Leandro Borges - Você Viverá",
-id:"ID_DO_VIDEO"
-},
-
-{
-title:"Oração Forjadas no Lugar Secreto",
-id:"ID_DO_VIDEO"
-}
-
+    {
+        title: "Música 1",
+        youtubeId: "Sg0_mFLVqZo"
+    },
+    {
+        title: "Música 2",
+        youtubeId: "WTen9x3j6Sw"
+    },
+    {
+        title: "Música 3",
+        youtubeId: "dNMIxWWxYNo"
+    },
+    {
+        title: "Música 4",
+        youtubeId: "QYKpysFX-9I"
+    },
+    {
+        title: "Música 5",
+        youtubeId: "66BP5rpxydo"
+    },
+    {
+        title: "Música 6",
+        youtubeId: "Kv4eCXia5fQ"
+    }
 ];
 
-
+let currentIndex = 0;
 let player;
+let playing = false;
 
-let current=0;
+function onYouTubeIframeAPIReady() {
 
-
-function onYouTubeIframeAPIReady(){
-
-player = new YT.Player('player',{
-
-height:'120',
-
-width:'100%',
-
-videoId:playlist[0].id,
-
-playerVars:{
-controls:1,
-rel:0
-}
-
-});
+    player = new YT.Player("player", {
+        height: "1",
+        width: "1",
+        videoId: playlist[0].youtubeId,
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            rel: 0
+        },
+        events: {
+            onReady: renderPlaylist,
+            onStateChange: onPlayerStateChange
+        }
+    });
 
 }
 
+function renderPlaylist(){
 
-const list=document.getElementById("playlist");
+    const container = document.getElementById("playlist");
 
+    container.innerHTML="";
 
-playlist.forEach((music,index)=>{
+    playlist.forEach((music,index)=>{
 
-let div=document.createElement("div");
+        const button=document.createElement("button");
 
-div.className="music";
+        button.className="music";
 
-div.innerHTML=music.title;
+        button.innerText=music.title;
 
+        button.onclick=()=>playMusic(index);
 
-div.onclick=()=>{
+        container.appendChild(button);
 
-current=index;
+    });
 
-player.loadVideoById(music.id);
+}
 
-document.getElementById("current").innerHTML=music.title;
+function playMusic(index){
+
+    currentIndex=index;
+
+    player.loadVideoById(playlist[index].youtubeId);
+
+    document.getElementById("currentTitle").innerText=playlist[index].title;
+
+    document.querySelectorAll(".music").forEach(btn=>btn.classList.remove("active"));
+
+    document.querySelectorAll(".music")[index].classList.add("active");
+
+    playing=true;
+
+    document.getElementById("playPause").innerText="⏸";
+
+}
+
+document.getElementById("playPause").onclick=function(){
+
+    if(!player) return;
+
+    if(playing){
+
+        player.pauseVideo();
+
+        playing=false;
+
+        this.innerText="▶";
+
+    }else{
+
+        player.playVideo();
+
+        playing=true;
+
+        this.innerText="⏸";
+
+    }
 
 };
 
+document.getElementById("next").onclick=function(){
 
-list.appendChild(div);
+    currentIndex++;
 
+    if(currentIndex>=playlist.length){
 
-});
+        currentIndex=0;
 
+    }
 
+    playMusic(currentIndex);
 
-function playPause(){
+};
 
-let state=player.getPlayerState();
+document.getElementById("prev").onclick=function(){
 
-if(state===1){
+    currentIndex--;
 
-player.pauseVideo();
+    if(currentIndex<0){
 
-}else{
+        currentIndex=playlist.length-1;
 
-player.playVideo();
+    }
 
-}
+    playMusic(currentIndex);
 
-}
+};
 
+function onPlayerStateChange(event){
 
+    if(event.data===YT.PlayerState.ENDED){
 
-function next(){
+        currentIndex++;
 
-current++;
+        if(currentIndex>=playlist.length){
 
-if(current>=playlist.length)
-current=0;
+            currentIndex=0;
 
+        }
 
-player.loadVideoById(playlist[current].id);
+        playMusic(currentIndex);
 
-document.getElementById("current").innerHTML=playlist[current].title;
-
-}
-
-
-
-function previous(){
-
-current--;
-
-if(current<0)
-current=playlist.length-1;
-
-
-player.loadVideoById(playlist[current].id);
-
-document.getElementById("current").innerHTML=playlist[current].title;
+    }
 
 }
