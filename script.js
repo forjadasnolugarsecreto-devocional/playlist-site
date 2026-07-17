@@ -1,6 +1,5 @@
 
-<script src="https://www.youtube.com/iframe_api"></script>
-  const playlist = [
+const playlist = [
 
 {
 title:"Música 1",
