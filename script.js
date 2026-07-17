@@ -1,4 +1,6 @@
-const playlist = [
+
+<script src="https://www.youtube.com/iframe_api"></script>
+  const playlist = [
 
 {
 title:"Música 1",
