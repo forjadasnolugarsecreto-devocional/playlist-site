@@ -2,154 +2,58 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Oficial</title>
 
-<meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>Playlist Oficial</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<div class="overlay"></div>
+    <div class="overlay"></div>
 
-<main class="app">
+    <main class="app">
 
-<section class="glass">
+        <section class="glass">
 
-<header>
+            <header>
+                <h1>Playlist Oficial</h1>
+                <p>Clique em uma música para começar a ouvir.</p>
+            </header>
 
-<h1>Playlist Oficial</h1>
+            <div id="playlist" class="playlist"></div>
 
-<p>
-Clique em uma música para começar a ouvir.
-</p>
+            <footer>
 
-</header>
+                <h2 id="currentTitle">
+                    Nenhuma música selecionada
+                </h2>
 
-<div
-id="playlist"
-class="playlist">
+                <div class="controls">
+                    <button id="prev">⏮</button>
+                    <button id="playPause">▶</button>
+                    <button id="next">⏭</button>
+                </div>
 
-</div>
+            </footer>
 
-<footer>
+        </section>
 
-<div
-class="current">
+    </main>
 
-<div
-class="wave">
+    <div id="player"></div>
 
-<span></span>
-<span></span>
-<span></span>
-
-</div>
-
-<div>
-
-<small>Tocando agora</small>
-
-<h2
-id="currentTitle">
-
-Nenhuma música selecionada
-
-</h2>
-
-</div>
-
-</div>
-
-<div
-class="controls">
-
-<button
-id="prev">
-
-⏮
-
-</button>
-
-<button
-id="playPause">
-
-▶
-
-</button>
-
-<button
-id="next">
-
-⏭
-
-</button>
-
-</div>
-
-<div
-class="progress">
-
-<div
-class="progress-bar">
-
-<div
-id="progressFill">
-
-</div>
-
-</div>
-
-<div
-class="time">
-
-<span
-id="currentTime">
-
-00:00
-
-</span>
-
-<span
-id="duration">
-
-00:00
-
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
-</section>
-
-</main>
-
-<div id="player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script src="script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 
 </body>
 
