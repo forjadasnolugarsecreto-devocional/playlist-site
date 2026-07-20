@@ -6,7 +6,7 @@
 
 body{
 
-    font-family:Montserrat,sans-serif;
+    font-family:'Cormorant Garamond',serif;
 
     background:url("background.jpg") center center/cover no-repeat;
 
@@ -18,7 +18,7 @@ body{
 
     align-items:center;
 
-    padding:30px;
+    padding:40px;
 
 }
 
@@ -37,69 +37,101 @@ body{
     position:relative;
 
     width:100%;
-    max-width:650px;
+    max-width:720px;
 
-    background:rgba(0,0,0,.45);
+    padding:40px;
+
+    border-radius:22px;
 
     backdrop-filter:blur(8px);
-
-    border-radius:20px;
-
-    padding:30px;
 
 }
 
 h1{
 
-    color:#fff;
+    color:#e5dfd2;
 
     text-align:center;
 
-    margin-bottom:25px;
+    font-size:60px;
+
+    font-weight:700;
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#e5dfd2;
+
+    text-align:center;
+
+    font-size:25px;
+
+    font-weight:300;
+
+    margin-bottom:35px;
+
+    opacity:.9;
 
 }
 
 .music{
 
-    color:white;
+    background:#783034;
 
-    background:rgba(255,255,255,.10);
+    color:#e5dfd2;
 
-    padding:14px 18px;
+    padding:16px 22px;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
     cursor:pointer;
 
-    transition:.25s;
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s;
+
+    font-size:29px;
 
 }
 
 .music:hover{
 
-    background:rgba(255,255,255,.25);
+    background:#8b3b40;
+
+    transform:translateX(8px);
 
 }
 
 .music.active{
 
-    background:#ffffff;
+    background:#9b474b;
 
-    color:#000;
+}
 
-    font-weight:bold;
+.icon{
+
+    font-size:28px;
 
 }
 
 #player{
 
-    margin-top:25px;
-
     width:100%;
 
     height:120px;
+
+    margin-top:25px;
 
     border:none;
 
