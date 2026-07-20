@@ -99,20 +99,25 @@ h1{
 
     gap:15px;
 
-    transition:.3s;
+    transition:.25s;
 
-    font-size:29px;
+    font-family:'Montserrat',sans-serif;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    line-height:1.4;
 
 }
 
 .music:hover{
 
-    background:#8b3b40;
+    background:#8a3b40;
 
-    transform:translateX(8px);
+    transform:translateX(5px);
 
 }
-
 .music.active{
 
     background:#9b474b;
@@ -121,7 +126,11 @@ h1{
 
 .icon{
 
-    font-size:28px;
+    font-size:18px;
+
+    color:#e5dfd2;
+
+    flex-shrink:0;
 
 }
 
