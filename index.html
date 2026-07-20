@@ -3,44 +3,56 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Playlist Forjadas no Lugar Secreto</title>
+    <title>Playlist Forjadas no Lugar Secreto</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="overlay"></div>
+    <div class="overlay"></div>
 
-<div class="app">
+    <main class="app">
 
-    <h1>Playlist Forjadas no Lugar Secreto</h1>
+        <header>
 
-    <p class="subtitle">
-        Ouça com o coração e permita que cada canção conduza você ao Lugar Secreto.
-    </p>
+            <h1>
+                Playlist<br>
+                <span>Forjadas no Lugar Secreto</span>
+            </h1>
 
-    <div id="playlist"></div>
+            <p class="subtitle">
+                Ouça com o coração e permita que cada canção conduza você ao Lugar Secreto.
+            </p>
 
-    <iframe
-        id="player"
-        src="https://www.youtube.com/embed/Kv4eCXia5fQ"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
+        </header>
 
-</div>
+        <section id="playlist" class="playlist"></section>
 
-<script src="script.js"></script>
+        <section class="player-area">
+
+            <div id="youtube-player"></div>
+
+        </section>
+
+    </main>
+
+    <!-- API do YouTube -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Script da playlist -->
+    <script src="script.js"></script>
 
 </body>
+
 </html>
