@@ -26,37 +26,37 @@ id:"QYKpysFX-9I"
 },
 
 {
-title:"Você Viverá — Rebeca Carvalho",
+title:"Você Viverá — Rebeca Carvalho feat. Leandro Borges",
 id:"66BP5rpxydo"
 },
 
 {
-title:"Do Secreto ao Florescer",
+title:"Do Secreto ao Florescer — Janaína Banderob Medeiros",
 id:"r-ZmU6vO6uc"
 },
 
 {
-title:"Mil Motivos Para Agradecer",
+title:"Mil Motivos Para Agradecer — Rachel Novaes",
 id:"IhQlArzkCLU"
 },
 
 {
-title:"Deus, Eu Tenho Tantas Bênçãos",
+title:"Deus, Eu Tenho Tantas Bênçãos — Isadora Pompeo",
 id:"Xq_07hEF2AQ"
 },
 
 {
-title:"Ele Cumprirá / Firme nas Promessas",
+title:"Ele Cumprirá / Firme nas Promessas — Julliany Souza",
 id:"OBoIfiHaxXc"
 },
 
 {
-title:"Lágrimas",
+title:"Lágrimas — Sara Evelyn",
 id:"o0gY6ZnXNhE"
 },
 
 {
-title:"Das Raízes à Colheita",
+title:"Das Raízes à Colheita — Janaína Banderob Medeiros",
 id:"jQbPXZt7i98"
 }
 
@@ -72,15 +72,23 @@ songs.forEach((song,index)=>{
     div.className="music";
 
     if(index===0){
+
         div.classList.add("active");
+
     }
 
-    div.textContent=song.title;
+    div.innerHTML=`
+        <span class="icon">♪</span>
+        <span>${index+1}. ${song.title}</span>
+    `;
 
     div.onclick=()=>{
 
-        document.querySelectorAll(".music")
-            .forEach(item=>item.classList.remove("active"));
+        document.querySelectorAll(".music").forEach(item=>{
+
+            item.classList.remove("active");
+
+        });
 
         div.classList.add("active");
 
