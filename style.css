@@ -125,6 +125,8 @@ h1 span{
 
     gap:18px;
 
+    width:100%;
+
     background:#783034;
 
     color:#e5dfd2;
@@ -140,7 +142,6 @@ h1 span{
     box-shadow:0 6px 18px rgba(0,0,0,.18);
 
 }
-
 .music:hover{
 
     background:#8a393d;
@@ -181,8 +182,11 @@ h1 span{
 
     line-height:1.4;
 
-}
+    flex:1;
 
+    word-break:break-word;
+
+}
 .player-area{
 
     margin-top:28px;
@@ -205,93 +209,128 @@ h1 span{
 
 }
 
-/* Tablet */
+/* ========================= */
+/* TABLETS */
+/* ========================= */
 
-@media(max-width:768px){
+@media (max-width: 768px){
 
     body{
-
         padding:20px;
+    }
 
+    .app{
+        max-width:100%;
+        padding:15px;
     }
 
     h1{
-
         font-size:42px;
-
     }
 
     h1 span{
-
-        font-size:38px;
-
+        font-size:36px;
     }
 
     .subtitle{
-
         font-size:18px;
-
+        padding:0 10px;
     }
 
     .music{
-
         padding:14px 16px;
+        gap:14px;
+    }
 
+    .number{
+        font-size:13px;
+        min-width:22px;
     }
 
     .title{
-
         font-size:14px;
+        line-height:1.4;
+    }
 
+    #youtube-player{
+        height:110px;
     }
 
 }
 
-/* Celular */
+/* ========================= */
+/* CELULARES */
+/* ========================= */
 
-@media(max-width:480px){
+@media (max-width: 480px){
+
+    body{
+
+        padding:15px;
+
+        align-items:flex-start;
+
+    }
+
+    .app{
+
+        width:100%;
+
+        padding:10px;
+
+    }
 
     h1{
 
-        font-size:34px;
+        font-size:30px;
+
+        line-height:1.1;
 
     }
 
     h1 span{
 
-        font-size:31px;
+        font-size:27px;
 
     }
 
     .subtitle{
 
-        font-size:16px;
+        font-size:15px;
+
+        line-height:1.5;
+
+        margin-bottom:25px;
 
     }
 
     .music{
 
-        gap:12px;
+        padding:12px;
 
-        padding:13px 15px;
+        border-radius:10px;
+
+        gap:10px;
 
     }
 
     .number{
 
-        font-size:13px;
+        font-size:12px;
+
+        min-width:18px;
 
     }
 
-    .title{
-
-        font-size:13px;
-
-    }
+  .title{
+    font-size:15px;
+}
 
     #youtube-player{
 
-        height:90px;
+        height:85px;
+
+        border-radius:10px;
 
     }
 
