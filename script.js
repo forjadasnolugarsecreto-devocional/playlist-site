@@ -1,88 +1,93 @@
-const songs = [
+const songs=[
 
 {
-title:"Canção & Louvor - Eu Nunca Fui Forte",
-id:"Sg0_mFLVqZo"
+title:"Oração Forjadas no Lugar Secreto",
+id:"Kv4eCXia5fQ"
 },
 
 {
-title:"Stella Laura - O Senhor é Meu Pastor",
+title:"O Senhor é Meu Pastor — Manú Paiva",
 id:"WTen9x3j6Sw"
 },
 
 {
-title:"Débora Almeida - Testemunho Lindo",
+title:"Eu Nunca Fui Forte — Canção & Louvor",
+id:"Sg0_mFLVqZo"
+},
+
+{
+title:"Testemunho Lindo — Débora Almeida",
 id:"dNMIxWWxYNo"
+},
+
+{
+title:"No Secreto — Kailane Frauches",
+id:"QYKpysFX-9I"
+},
+
+{
+title:"Você Viverá — Rebeca Carvalho",
+id:"66BP5rpxydo"
+},
+
+{
+title:"Do Secreto ao Florescer",
+id:"r-ZmU6vO6uc"
+},
+
+{
+title:"Mil Motivos Para Agradecer",
+id:"IhQlArzkCLU"
+},
+
+{
+title:"Deus, Eu Tenho Tantas Bênçãos",
+id:"Xq_07hEF2AQ"
+},
+
+{
+title:"Ele Cumprirá / Firme nas Promessas",
+id:"OBoIfiHaxXc"
+},
+
+{
+title:"Lágrimas",
+id:"o0gY6ZnXNhE"
+},
+
+{
+title:"Das Raízes à Colheita",
+id:"jQbPXZt7i98"
 }
 
 ];
 
+const playlist=document.getElementById("playlist");
+const player=document.getElementById("player");
 
+songs.forEach((song,index)=>{
 
-let player;
+    const div=document.createElement("div");
 
+    div.className="music";
 
+    if(index===0){
+        div.classList.add("active");
+    }
 
-function onYouTubeIframeAPIReady(){
+    div.textContent=song.title;
 
+    div.onclick=()=>{
 
-player = new YT.Player(
-"youtube-player",
+        document.querySelectorAll(".music")
+            .forEach(item=>item.classList.remove("active"));
 
-{
+        div.classList.add("active");
 
-height:"280",
+        player.src=`https://www.youtube.com/embed/${song.id}?autoplay=1&rel=0`;
 
-width:"100%",
+    };
 
-
-videoId:songs[0].id,
-
-
-playerVars:{
-
-controls:1,
-
-rel:0
-
-}
-
-
-});
-
-
-}
-
-
-
-const playlist = document.getElementById("playlist");
-
-
-
-songs.forEach((song)=>{
-
-
-let item=document.createElement("div");
-
-
-item.className="music";
-
-
-item.innerHTML=song.title;
-
-
-
-item.onclick=function(){
-
-
-player.loadVideoById(song.id);
-
-
-};
-
-
-playlist.appendChild(item);
-
-
+    playlist.appendChild(div);
 
 });
