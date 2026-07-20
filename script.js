@@ -1,4 +1,4 @@
-const songs=[
+const songs = [
 
 {
 title:"Oração Forjadas no Lugar Secreto",
@@ -62,8 +62,25 @@ id:"jQbPXZt7i98"
 
 ];
 
-const playlist=document.getElementById("playlist");
-const player=document.getElementById("player");
+const playlist = document.getElementById("playlist");
+const player = document.getElementById("player");
+
+let current = 0;
+
+function play(index){
+
+    current = index;
+
+    document.querySelectorAll(".music").forEach(item=>{
+        item.classList.remove("active");
+    });
+
+    document.querySelectorAll(".music")[index].classList.add("active");
+
+    player.src =
+`https://www.youtube.com/embed/${songs[index].id}?autoplay=1&rel=0&enablejsapi=1`;
+
+}
 
 songs.forEach((song,index)=>{
 
@@ -72,9 +89,7 @@ songs.forEach((song,index)=>{
     div.className="music";
 
     if(index===0){
-
         div.classList.add("active");
-
     }
 
     div.innerHTML=`
@@ -82,20 +97,27 @@ songs.forEach((song,index)=>{
         <span>${index+1}. ${song.title}</span>
     `;
 
-    div.onclick=()=>{
-
-        document.querySelectorAll(".music").forEach(item=>{
-
-            item.classList.remove("active");
-
-        });
-
-        div.classList.add("active");
-
-        player.src=`https://www.youtube.com/embed/${song.id}?autoplay=1&rel=0`;
-
-    };
+    div.onclick=()=>play(index);
 
     playlist.appendChild(div);
+
+});
+
+window.addEventListener("message",(event)=>{
+
+    if(typeof event.data !== "string") return;
+
+    if(event.data.includes('"event":"onStateChange"') &&
+       event.data.includes('"info":0')){
+
+        let next=current+1;
+
+        if(next>=songs.length){
+            next=0;
+        }
+
+        play(next);
+
+    }
 
 });
