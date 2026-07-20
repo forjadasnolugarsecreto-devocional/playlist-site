@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Playlist</title>
 
@@ -11,36 +11,26 @@
 
 </head>
 
-
 <body>
 
 <div class="overlay"></div>
 
-
-<div class="container">
+<div class="app">
 
     <h1>Playlist</h1>
 
-
     <div id="playlist"></div>
 
-
-    <div class="player">
-
-        <div id="youtube-player"></div>
-
-    </div>
-
+    <iframe
+        id="player"
+        src="https://www.youtube.com/embed/Kv4eCXia5fQ"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
 
 </div>
 
-
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
 <script src="script.js"></script>
 
-
 </body>
-
 </html>
