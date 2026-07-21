@@ -191,6 +191,8 @@ h1 span{
 
     margin-top:28px;
 
+}
+
 #youtube-player{
 
     width:100%;
@@ -213,7 +215,6 @@ h1 span{
 
     border:none;
 
-}
 }
 
 /* ========================= */
@@ -260,7 +261,7 @@ h1 span{
     }
 
     #youtube-player{
-        height:140px;
+        height:180px;
     }
 
 }
@@ -335,7 +336,7 @@ h1 span{
 
     #youtube-player{
 
-        height:120px;
+        height:170px;
 
         border-radius:10px;
 
