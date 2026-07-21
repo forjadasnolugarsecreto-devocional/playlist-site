@@ -90,7 +90,7 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player("youtube-player", {
 
         width: "100%",
-        height: "110",
+        height: "220",
 
         videoId: songs[0].id,
 
