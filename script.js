@@ -89,27 +89,20 @@ function onYouTubeIframeAPIReady() {
 
     player = new YT.Player("youtube-player", {
 
-    width: "100%",
-    height: "220",
+        width: "100%",
+        height: "220",
 
-    videoId: songs[0].id,
-
-    ...
-});
+        videoId: songs[0].id,
 
         playerVars: {
-
             rel: 0,
             modestbranding: 1,
             controls: 1
-
         },
 
         events: {
-
             onReady: onPlayerReady,
             onStateChange: onPlayerStateChange
-
         }
 
     });
